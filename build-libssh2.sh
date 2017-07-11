@@ -21,7 +21,7 @@
 ###########################################################################
 #  Change values here
 #
-VERSION="1.4.3"
+VERSION="1.8.0"
 #
 ###########################################################################
 #
@@ -41,7 +41,7 @@ fi
 
 echo "Checking file: libssh2-${VERSION}.tar.gz"
 md5=`md5 -q libssh2-${VERSION}.tar.gz`
-if [ $md5 != "071004c60c5d6f90354ad1b701013a0b" ]
+if [ $md5 != "3d1147cae66e2959ea5441b183de1b1c" ]
 then
 	echo "File corrupt, please download again."
 	exit 1
@@ -65,6 +65,9 @@ do
 	echo "Please stand by..."
 	tar zxf libssh2-${VERSION}.tar.gz -C src
 	cd src/libssh2-${VERSION}
+
+	PATCHFILE=`find ../.. | grep with-libgcrypt-prefix.patch`
+	patch -p2 < $PATCHFILE
 
 	export DEVROOT="${DEVELOPER}/Platforms/${PLATFORM}.platform/Developer"
 	export SDKROOT="${DEVROOT}/SDKs/${PLATFORM}${SDKVERSION}.sdk"
@@ -91,6 +94,8 @@ do
 		HOST="aarch64"
 	fi
 	
+	autoconf
+
 	if [ "$1" == "openssl" ];
 	then
 		./configure --host=${HOST}-apple-darwin --prefix="${CURRENTPATH}/bin/${PLATFORM}${SDKVERSION}-${ARCH}.sdk" --with-openssl --with-libssl-prefix=${CURRENTPATH}/bin/${PLATFORM}${SDKVERSION}-${ARCH}.sdk --disable-shared --enable-static  >> "${LOG}" 2>&1
