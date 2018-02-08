@@ -4,5 +4,5 @@ language: objective-c
 before_install: 
 
 script: 
- - ./build-all.sh openssl verbose
+ - ./build-all.sh openssl 
  - xcrun -sdk iphoneos lipo -info ./lib/*.a
