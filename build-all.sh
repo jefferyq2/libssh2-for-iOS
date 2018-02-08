@@ -22,9 +22,10 @@ if [ "$1" == "openssl" ];
 then
 	echo "Building openssl:"
 	./openssl/build-libssl.sh $2
-	./openssl/create-openssl-framework.sh
+	./openssl/create-openssl-framework.sh dynamic
 	echo "Build libssh2:"
 	./build-libssh2.sh openssl
+	./create-libssh2-framework.sh dynamic
 elif [ "$1" == "libgcrypt" ];
 then
 	echo "Build libgpg-error:"
