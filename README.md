@@ -29,7 +29,7 @@ git submodule update
 ### Solve problems:
 Check the log files in the ```bin``` folder
 ## Changelog:
-
+* 2018-02-09: Create fat dynamic frameworks, with embed-bitcode
 * 2015-12-11: OpenSSL 1.0.2e
 * 2015-01-11: Support for Xcode 7 and iOS 9.1, OpenSSL 1.0.2d
 * 2015-01-11: OpenSSL 1.0.1k
