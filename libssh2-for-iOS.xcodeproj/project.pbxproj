@@ -34,13 +34,13 @@
 		1D6058910D05DD3D006BFB54 /* libssh2-for-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "libssh2-for-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		22BCB308202E32330041F00E /* openssl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = openssl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		22BCB30B202E32330041F00E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		22BCB30B202E32330041F00E /* openssl_Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = openssl_Info.plist; path = ../openssl_Info.plist; sourceTree = "<group>"; };
 		22BCB310202E32590041F00E /* openssl */ = {isa = PBXFileReference; lastKnownFileType = folder; name = openssl; path = include/openssl; sourceTree = "<group>"; };
 		22BCB312202E32650041F00E /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = lib/libssl.a; sourceTree = "<group>"; };
 		22BCB314202E32690041F00E /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = lib/libcrypto.a; sourceTree = "<group>"; };
 		22BCB31B202E32AF0041F00E /* libssh2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = libssh2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22BCB31D202E32AF0041F00E /* libssh2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = libssh2.h; sourceTree = "<group>"; };
-		22BCB31E202E32AF0041F00E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		22BCB31E202E32AF0041F00E /* libssh2_Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = libssh2_Info.plist; path = ../libssh2_Info.plist; sourceTree = "<group>"; };
 		22BCB325202E32D50041F00E /* libssh2 */ = {isa = PBXFileReference; lastKnownFileType = folder; name = libssh2; path = include/libssh2; sourceTree = "<group>"; };
 		288765FC0DF74451002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		2AB446E812F8A588006B0090 /* libssh2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssh2.a; path = lib/libssh2.a; sourceTree = "<group>"; };
@@ -109,7 +109,7 @@
 		22BCB309202E32330041F00E /* openssl */ = {
 			isa = PBXGroup;
 			children = (
-				22BCB30B202E32330041F00E /* Info.plist */,
+				22BCB30B202E32330041F00E /* openssl_Info.plist */,
 			);
 			path = openssl;
 			sourceTree = "<group>";
@@ -118,7 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				22BCB31D202E32AF0041F00E /* libssh2.h */,
-				22BCB31E202E32AF0041F00E /* Info.plist */,
+				22BCB31E202E32AF0041F00E /* libssh2_Info.plist */,
 			);
 			path = libssh2;
 			sourceTree = "<group>";
@@ -468,7 +468,7 @@
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
-				INFOPLIST_FILE = openssl/Info.plist;
+				INFOPLIST_FILE = openssl_Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -539,7 +539,7 @@
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
-				INFOPLIST_FILE = openssl/Info.plist;
+				INFOPLIST_FILE = openssl_Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -620,7 +620,7 @@
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
-				INFOPLIST_FILE = libssh2/Info.plist;
+				INFOPLIST_FILE = libssh2_Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -695,7 +695,7 @@
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
-				INFOPLIST_FILE = libssh2/Info.plist;
+				INFOPLIST_FILE = libssh2_Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
