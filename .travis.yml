@@ -5,4 +5,5 @@ before_install:
 
 script: 
  - ./build-all.sh openssl 
- - xcrun -sdk iphoneos lipo -info ./lib/*.a
+ - xcrun -sdk iphoneos lipo -info libssh2.framework/libssh2 
+ - xcrun -sdk iphoneos lipo -info openssl.framework/openssl 
