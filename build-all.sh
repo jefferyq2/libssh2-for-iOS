@@ -26,10 +26,12 @@ then
 	rm -rf build
 	rm -rf openssl.framework
 	xcodebuild -project libssh2-for-iOS.xcodeproj -target openssl -sdk iphoneos  -configuration Debug
+	mkdir -p build/Debug-iphoneos/openssl.framework/Headers/
+	cp include/openssl/* build/Debug-iphoneos/openssl.framework/Headers/
 	xcodebuild -project libssh2-for-iOS.xcodeproj -target openssl -sdk iphonesimulator  -configuration Debug
+	mkdir -p build/Debug-iphonesimulator/openssl.framework/Headers/
+	cp include/openssl/* build/Debug-iphonesimulator/openssl.framework/Headers/
 	cp -r build/Debug-iphoneos/openssl.framework .
-	mkdir -p openssl.framework/Headers/
-	cp include/openssl/* openssl.framework/Headers/
 	lipo -create -output openssl.framework/openssl build/Debug-iphonesimulator/openssl.framework/openssl build/Debug-iphoneos/openssl.framework/openssl
 	# if you don't need bitcode, use this line instead:
 	# ./openssl/create-openssl-framework.sh dynamic
@@ -38,10 +40,12 @@ then
 	# Make dynamic framework, with embed-bitcode, iOS + Simulator:
 	rm -rf libssh2.framework
 	xcodebuild -project libssh2-for-iOS.xcodeproj -target libssh2 -sdk iphoneos  -configuration Debug
+	mkdir -p build/Debug-iphoneos/libssh2.framework/Headers/
+	cp include/libssh2/* build/Debug-iphoneos/libssh2.framework/Headers/
 	xcodebuild -project libssh2-for-iOS.xcodeproj -target libssh2 -sdk iphonesimulator  -configuration Debug
+	mkdir -p build/Debug-iphonesimulator/libssh2.framework/Headers/
+	cp include/libssh2/* build/Debug-iphonesimulator/libssh2.framework/Headers/
 	cp -r build/Debug-iphoneos/libssh2.framework .
-	mkdir -p libssh2.framework/Headers/
-	cp include/libssh2/* libssh2.framework/Headers/
 	lipo -create -output libssh2.framework/libssh2 build/Debug-iphonesimulator/libssh2.framework/libssh2 build/Debug-iphoneos/libssh2.framework/libssh2
 	# if you don't need bitcode, use this line instead:
 	# ./create-libssh2-framework.sh dynamic
