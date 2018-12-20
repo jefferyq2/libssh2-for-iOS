@@ -21,7 +21,7 @@
 if [ "$1" == "openssl" ];
 then
 	echo "Building openssl:"
-	./openssl/build-libssl.sh $2
+	./openssl/build-libssl.sh --version=1.1.0j --deprecated $2
 	# Make dynamic framework, with embed-bitcode, iOS + Simulator:
 	rm -rf build
 	rm -rf openssl.framework
