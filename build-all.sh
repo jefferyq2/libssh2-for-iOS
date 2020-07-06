@@ -32,8 +32,10 @@ then
 	xcodebuild -project libssh2-for-iOS.xcodeproj -target openssl -sdk iphonesimulator -destination 'platform=iOS Simulator,OS=10.0' -arch x86_64 -arch i386  -configuration Debug
 	mkdir -p build/Debug-iphonesimulator/openssl.framework/Headers/
 	cp include/openssl/* build/Debug-iphonesimulator/openssl.framework/Headers/
-	cp -r build/Debug-iphoneos/openssl.framework .
-	lipo -create -output openssl.framework/openssl build/Debug-iphonesimulator/openssl.framework/openssl build/Debug-iphoneos/openssl.framework/openssl
+	xcodebuild -create-xcframework -framework build/Debug-iphoneos/openssl.framework -framework build/Debug-iphonesimulator/openssl.framework -output openssl.xcframework
+	# 
+	# cp -r build/Debug-iphoneos/openssl.framework .
+	# lipo -create -output openssl.framework/openssl build/Debug-iphonesimulator/openssl.framework/openssl build/Debug-iphoneos/openssl.framework/openssl
 	# if you don't need bitcode, use this line instead:
 	# ./openssl/create-openssl-framework.sh dynamic
 	echo "Build libssh2:"
@@ -46,8 +48,9 @@ then
 	xcodebuild -project libssh2-for-iOS.xcodeproj -target libssh2 -sdk iphonesimulator -destination 'platform=iOS Simulator,OS=10.0' -arch x86_64 -arch i386  -configuration Debug
 	mkdir -p build/Debug-iphonesimulator/libssh2.framework/Headers/
 	cp include/libssh2/* build/Debug-iphonesimulator/libssh2.framework/Headers/
-	cp -r build/Debug-iphoneos/libssh2.framework .
-	lipo -create -output libssh2.framework/libssh2 build/Debug-iphonesimulator/libssh2.framework/libssh2 build/Debug-iphoneos/libssh2.framework/libssh2
+	xcodebuild -create-xcframework -framework build/Debug-iphoneos/libssh2.framework -framework build/Debug-iphonesimulator/libssh2.framework -output libssh2.xcframework
+	# cp -r build/Debug-iphoneos/libssh2.framework .
+	# lipo -create -output libssh2.framework/libssh2 build/Debug-iphonesimulator/libssh2.framework/libssh2 build/Debug-iphoneos/libssh2.framework/libssh2
 	# if you don't need bitcode, use this line instead:
 	# ./create-libssh2-framework.sh dynamic
 elif [ "$1" == "libgcrypt" ];
