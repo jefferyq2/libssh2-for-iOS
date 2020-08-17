@@ -13,12 +13,18 @@ let package = Package(
         .binaryTarget(
             name: "openssl",
             url: "https://github.com/holzschu/libssh2-for-iOS/releases/download/v1.1/openssl.xcframework.zip",
-            checksum: "75b1bc5ea79049f8f24155075802620ba2a4b576bf81009423b2aebb886b46aa"
+            checksum: "5bc0aa948d6bccdef8a99c01e54414ea4af5fc48ec140ec69da8c7a4c0421ca5"
         ),
         .binaryTarget(
             name: "libssh2",
             url: "https://github.com/holzschu/libssh2-for-iOS/releases/download/v1.1/libssh2.xcframework.zip",
-            checksum: "bc6bd33561e4ab1f05e9ac358b7507bc7a1f45a11437cc722e42b71134a48cf9"
+            checksum: "14846ad5210f511ade5ca1977a936d11f308d659972d3fbbe24703b76be62639"
         )
     ]
 )
+/* 
+openssl
+5bc0aa948d6bccdef8a99c01e54414ea4af5fc48ec140ec69da8c7a4c0421ca5
+libssh2
+14846ad5210f511ade5ca1977a936d11f308d659972d3fbbe24703b76be62639
+*/
